@@ -1,16 +1,18 @@
 import fotoProfil from "./foto-profil.jpg";
 import StyleFont from "./HeroSection.module.css";
 
-function HeroSection() {
+import PropTypes from "prop-types";
+
+function HeroSection(props) {
   return (
-    <section>
+    <section className="h-screen w-screen fixed left-0 top-0 grid place-items-center z-[-10]">
       <div
-        className={`${StyleFont.font} flex items-center justify-center gap-20 mt-20`}
+        className={`${StyleFont.font} flex items-center justify-between gap-20 p-5`}
       >
         <div>
           <p className="text-xl leading-relaxed">
             Hi, nama saya <br />
-            <span className="text-3xl font-bold">Noor Mohamad Alfaz.</span>
+            <span className="text-3xl font-bold">{props.name}.</span>
             <br /> Saya adalah seorang mahasiswa dari Universitas Bina Sarana
             Informatika.
             <br /> Saya suka mempelajari hal-hal baru dan juga tertarik untuk
@@ -28,5 +30,9 @@ function HeroSection() {
     </section>
   );
 }
+
+HeroSection.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default HeroSection;

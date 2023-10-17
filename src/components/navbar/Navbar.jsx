@@ -3,23 +3,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <header>
       <nav
-        className={`${StyleFont.font} flex justify-around mt-14 text-xl font-semibold`}
+        className={`${StyleFont.font} flex justify-between p-5 text-xl font-semibold`}
       >
         <div>
-          <ul className="flex gap-5">
+          <ul className="flex gap-5 ">
             <li className="hover:text-sky-700 hover:border-b hover:border-b-sky-700">
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li className="hover:text-sky-700 hover:border-b hover:border-b-sky-700">
-              <a href="">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li className="hover:text-sky-700 hover:border-b hover:border-b-sky-700">
-              <a href="">Keterampilan</a>
+              <Link to="/keterampilan">Keterampilan</Link>
             </li>
             <li className="hover:text-sky-700 hover:border-b hover:border-b-sky-700">
               <a href="">Blog</a>
@@ -29,7 +30,11 @@ function Navbar() {
         <div>
           <ul className="flex gap-5">
             <li className="hover:text-sky-700">
-              <a href="https://github.com/noormalfaz" target="_blank">
+              <a
+                href="https://github.com/noormalfaz"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faGithub} size="xl" />
               </a>
             </li>
@@ -37,12 +42,17 @@ function Navbar() {
               <a
                 href="https://www.linkedin.com/in/noor-mohamad-alfaz-3773b2277/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedin} size="xl" />
               </a>
             </li>
             <li className="hover:text-sky-700">
-              <a href="https://www.instagram.com/nrmalfazzz_/" target="_blank">
+              <a
+                href="https://www.instagram.com/nrmalfazzz_/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faInstagram} size="xl" />
               </a>
             </li>
